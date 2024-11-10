@@ -1,14 +1,8 @@
-# Use the PHP OpenSwoole image
+# Use a PHP and OpenSwoole-compatible image
 FROM openswoole/swoole:latest
 
-# Set the working directory
-WORKDIR /app
+# Copy the server script into the container
+COPY server.php /var/www/server.php
 
-# Copy the PHP code into the container
-COPY . .
-
-# Expose port 9501
-#EXPOSE 9501
-
-# Run the OpenSwoole server
-CMD ["php", "server.php"]
+# Run the server script
+CMD ["php", "/var/www/server.php"]
