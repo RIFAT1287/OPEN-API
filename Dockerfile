@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Expose port 9501
-EXPOSE 9501
+#EXPOSE 9501
 
 # Run the OpenSwoole server
 CMD ["php", "server.php"]
